@@ -54,7 +54,7 @@ The use of SQLite makes it easier to make security copies.
 
 
 ## License
-[Mozilla Public License 2.0](https://developer.twitter.com/en)
+[Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/2.0/)
 
-[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://www.mozilla.org/en-US/MPL/2.0/)
 
