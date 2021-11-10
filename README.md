@@ -38,7 +38,7 @@ Next you have to enter the user names of the people you what to get the backup a
 
 ## Cloud storage
 
-This program uses the [Mega.py](https://pypi.org/project/mega.py/) API to store the backups of the users on a MEGA account in separeted folders labled by the user ID.
+This program uses the [Mega.py](https://pypi.org/project/mega.py/) API to store the backups of the users on a MEGA account in separated folders labled by the user ID.
 
 ## About the database
 
