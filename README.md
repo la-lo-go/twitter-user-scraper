@@ -1,4 +1,4 @@
-﻿# Twitter User Scraper
+# Twitter User Scraper
 This script will help you to create security copies on MEGA of the follows and followers of the twitter accounts you want. Also, the copies are compared to know if there has been any change and know if it was an unfollow, [*soft block*](https://www.urbandictionary.com/define.php?term=Soft%20Block) or if the account is suspended.
 
 ## Prerequisites
