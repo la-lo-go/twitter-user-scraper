@@ -10,7 +10,7 @@ This script will help you to create security copies on MEGA of the follows and f
 
 ## Steps
 
-1. Clone the repository:
+1. Clone (or download) the repository:
 ```
 git clone https://github.com/la-lo-go/twitter-user-scraper
 ```
@@ -34,7 +34,7 @@ After you start the application yo will see a menu with these options:
  3. Update and create the followers and follows backup.
  4. Download locally all the files from a user.
 
-Next you have to enter the user names of the people you what to get the backup and the resume.
+Next you have to enter the user names of the people you want to get the backup and get the resume. You can enter as many user names as you like (separated by spaces), all the resumes will be shown at the end.
 
 ## Cloud storage
 
