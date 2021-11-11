@@ -42,7 +42,7 @@ This program uses the [Mega.py](https://pypi.org/project/mega.py/) API to store 
 
 ## About the database
 
-The script uses a SQLite3 database to store the IDs and names to look up to the users that have already been copied so it can run way more faster and don't excced the API limit (900 users lookups per 15 minutes) and if is not in the database it stores it.
+The script uses a SQLite3 database to store the IDs and names to look up to the users that have already been copied so it can run way more faster and don't excced the API limit (900 users lookups per 15 minutes). If is not in the database it stores it.
 
 The use of SQLite makes it easier to make security copies.
 
