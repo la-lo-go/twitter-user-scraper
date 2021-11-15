@@ -271,7 +271,7 @@ def get_resume(name, resume_list):
                     soft_or_bans.append(e_ers)
                     
         if len(soft_or_bans) > 0:
-            user_resume += f"\n>>>> Softblocks o cuentas elimninadas: {len(soft_or_bans)}"
+            user_resume += f"\n>>>> Softblocks o cuentas cuentas de mutuals elimininadas: {len(soft_or_bans)}"
             for user in soft_or_bans:
                 resume_list[1].remove(user)
                 resume_list[4].remove(user)
