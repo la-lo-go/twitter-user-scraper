@@ -16,7 +16,7 @@ git clone https://github.com/la-lo-go/twitter-user-scraper
 ```
 2. Install the APIs packages:
 ``` bash
-python -m pip3 install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 3. In key.py complete the APIs variables:
 
