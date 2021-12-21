@@ -92,7 +92,7 @@ def getDatabaseInfo(sqliteConnection, id):
     except sqlite3.Error as error:
         print("Fallo al leer de la base de datos: ", error)
 
-def checkUser (name):
+def checkUser (name, tries):
     """Checkea si un usuario sigue existiendo en twitter
 
     Args:
@@ -112,10 +112,13 @@ def checkUser (name):
         else:
             return 'protected'
     except tweepy.TweepError as e:
-        if e.api_code == 50: #User not found
+        if e.api_code == 50 or e.api_code == 63: #User not found-suspended
             return False
-        else:
-            checkUser(name)
+        else: #Reintenta 5 veces
+            if tries < 5:
+                checkUser(name, ++tries)
+            else:
+                return False
 
 def download_user(id, name):
     """Descarga localmente en una carpeta los archivos que existen de un usuario
@@ -271,12 +274,12 @@ def get_resume(name, resume_list):
                     soft_or_bans.append(e_ers)
                     
         if len(soft_or_bans) > 0:
-            user_resume += f"\n>>>> Softblocks o cuentas cuentas de mutuals elimininadas: {len(soft_or_bans)}"
+            user_resume += f"\n>>>> Softblocks o cuentas de mutuals eliminadas: {len(soft_or_bans)}"
             for user in soft_or_bans:
                 resume_list[1].remove(user)
                 resume_list[4].remove(user)
                 user_resume += "\n     -> "+user
-                if checkUser(user) != False:
+                if checkUser(user, 0) != False:
                     user_resume += " [Softblock]"
                 else:
                     user_resume += " [Eliminada]"
@@ -291,7 +294,7 @@ def get_resume(name, resume_list):
                 user_resume += f"\n>>>> Le han dejado de seguir: {eliminados_lenght}"
                 for user in resume_list[i+1]: 
                     user_resume += "\n     -> "+user
-                    if checkUser(user) == False:
+                    if checkUser(user, 0) == False:
                         user_resume += " [Eliminada]"
             else:
                 user_resume += "\n>>>> No le ha dejado de seguir nadie"
@@ -310,7 +313,7 @@ def get_resume(name, resume_list):
                 user_resume += f"\n>>>> Ha dejado de seguir a: {eliminados_lenght}"
                 for user in resume_list[i+1]: 
                     user_resume += "\n     -> "+user
-                    if checkUser(user) == False:
+                    if checkUser(user, 0) == False:
                         user_resume += " [Eliminada]"
             else:
                 user_resume += "\n>>>> No ha dejado de seguir a nadie"
@@ -463,8 +466,6 @@ def twitter_scraper (usuario_name, user_ID, option, user_number):
             print (">>>> Fichero subido a MEGA ", end="")
             os.remove(temp_folder+"/"+file_name)
             print("y fichero temporal borrado")
-
-    print (f">>>> {usuario_name} URL: {m.export(user_ID)}")
     
     if folder_exist == True:
         return get_resume(usuario_name, resume_list)
@@ -512,7 +513,7 @@ if __name__ == '__main__':
                 continue
             
             #Comprueba si el usuario existe o está protegido (con candado)
-            check = checkUser(usuario_name)
+            check = checkUser(usuario_name, 0)
             if check == False:
                 print (f"\n>>>> El usuario @{usuario_name} no existe")
                 user_number += 1
