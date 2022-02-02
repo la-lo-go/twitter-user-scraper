@@ -27,14 +27,16 @@ python -m pip install -r requirements.txt
 
 
 ## How to use the program
-After you start the application yo will see a menu with these options:
+After you start the application you will see a menu with these options:
 
  1. Update or create the followers backup.
  2. Update or create the follows backup.
  3. Update and create the followers and follows backup.
  4. Download locally all the files from a user.
 
-Next you have to enter the user names of the people you want to get the backup and get the resume. You can enter as many user names as you like (separated by spaces), all the resumes will be shown at the end.
+Next you have to enter the user names of the people you want to get their backup and resume. You can enter as many user names as you like (separated by spaces), all the resumes will be shown at the end.
+
+<img src="./img/sampleExit.jpg" alt="sample the resume of the user" width="300"/>
 
 ## Cloud storage
 
