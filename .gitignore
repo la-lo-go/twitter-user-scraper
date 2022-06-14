@@ -1,3 +1,5 @@
-__pycache__/
-prototipado/
-.db
+/__pycache__/
+/prototipado/
+/temp/
+/apisKeys.py
+*.db
